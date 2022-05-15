@@ -60,7 +60,7 @@ local function getRKSYSPointer()
 end
 Pointers.getRKSYSPointer = getRKSYSPointer
 
-local function getPrevPositionPointer(Offset)
+local function getPlayerPhysicsHolderPointer(Offset)
   local pointer
   if GetGameID() == "RMCP01" then pointer = 0x9C18F8
   elseif GetGameID() == "RMCE01"then pointer = 0x9BD110
@@ -69,9 +69,9 @@ local function getPrevPositionPointer(Offset)
   end
   return GetPointerNormal(pointer, 0xC, 0x10, Offset, 0x0, 0x8, 0x90)
 end
-Pointers.getPrevPositionPointer = getPrevPositionPointer
+Pointers.getPlayerPhysicsHolderPointer = getPlayerPhysicsHolderPointer
 
-local function getPositionPointer(Offset)
+local function getPlayerPhysicsPointer(Offset)
   local pointer
   if GetGameID() == "RMCP01" then pointer = 0x9C18F8
   elseif GetGameID() == "RMCE01"then pointer = 0x9BD110
@@ -80,7 +80,7 @@ local function getPositionPointer(Offset)
   end
   return GetPointerNormal(pointer, 0xC, 0x10, Offset, 0x0, 0x8, 0x90, 0x4)
 end
-Pointers.getPositionPointer = getPositionPointer
+Pointers.getPlayerPhysicsPointer = getPlayerPhysicsPointer
 
 local function getPlayerBasePointer(Offset)
   local pointer
