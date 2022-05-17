@@ -1,12 +1,9 @@
 local Pointers = {}
 
 function isViable()
-	local gameID = GetGameID()
-	if gameID == "RMCE01" or gameID == "RMCP01" or gameID == "RMCJ01" or gameID == "RMCK01" then
-		return true
-	else
-		return false
-	end
+  local gameID = GetGameID()
+  if gameID == "RMCE01" or gameID == "RMCP01" or gameID == "RMCJ01" or gameID == "RMCK01" then return true end
+  return false
 end
 
 local function getKMPBasePointer()
