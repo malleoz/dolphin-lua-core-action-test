@@ -12,7 +12,7 @@ env:
 
 jobs:
   build:
-    runs-on: [x86_64, amd64]
+    runs-on: [arm64]
     steps:
     - uses: actions/checkout@v3
 
