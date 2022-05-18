@@ -167,8 +167,6 @@ endif()
 # Architecture detection and arch specific settings
 message(${CMAKE_SYSTEM_PROCESSOR})
 
-set(CMAKE_SYSTEM_PROCESSOR, "amd64")
-
 # Detect 64bit or 32bit
 # CMake doesn't provide a simple way to determine 32bit or 64bit
 # If we ever support a architecture that is 64bit with 32bit pointers then this'll break
@@ -176,9 +174,11 @@ set(CMAKE_SYSTEM_PROCESSOR, "amd64")
 if(CMAKE_SIZEOF_VOID_P EQUAL 8)
 	set(_ARCH_64 1)
 	add_definitions(-D_ARCH_64=1)
+	message("_ARCH_64")
 else()
 	set(_ARCH_32 1)
 	add_definitions(-D_ARCH_32=1)
+	message("_ARCH_32")
 endif()
 
 include(CheckCCompilerFlag)
